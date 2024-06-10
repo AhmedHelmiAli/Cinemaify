@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Movie } from "../interfaces/MovieInterface";
+import LazyImage from "./LazyImage";
 
 interface MovieListProps {
   movie: Movie;
@@ -17,16 +18,16 @@ const MovieCard: React.FC<MovieListProps> = ({ movie }) => {
     <NavLink to={`/movie-details/${movieId}`}>
       <div className="relative bg-white border border-gray-200 rounded-lg group">
         <div className="w-full h-96">
-          <img
-            className="block object-cover w-full h-full rounded-t-lg group-hover:opacity-50"
+          {/* <img
+            className="block object-cover w-full h-full aspect-auto rounded-t-lggroup-hover:opacity-50"
             src={
               movieImage
                 ? `https://image.tmdb.org/t/p/w500${movieImage}`
                 : "/favicon.webp"
             }
             alt="movie-image"
-            loading="lazy"
-          />
+          /> */}
+          <LazyImage image={movieImage} />
         </div>
 
         <div className="p-2">

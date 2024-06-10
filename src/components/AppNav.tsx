@@ -10,12 +10,10 @@ export default function AppNav() {
         >
           <img
             src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
+            className="w-8 h-8 aspect-auto"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Cinemaify
-          </span>
+          <span className="self-center text-2xl font-semibold">Cinemaify</span>
         </Link>
         <button
           data-collapse-toggle="navbar-default"

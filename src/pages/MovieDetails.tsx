@@ -9,6 +9,7 @@ export default function MovieDetails() {
   const { id: movieId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState<AllMovieDetails>({});
+  const movieImage = movie["backdrop_path"] ? movie["backdrop_path"] : "";
 
   useEffect(() => {
     setIsLoading(true);
@@ -37,12 +38,12 @@ export default function MovieDetails() {
       <div className="relative flex flex-col max-w-lg p-3 mx-auto space-y-3 bg-white border border-white shadow-lg sm:flex-row sm:space-x-5 md:space-y-0 rounded-xl sm:max-w-4xl">
         <div className="grid w-full bg-white sm:w-1/3 place-items-center">
           <img
-            src={`https://image.tmdb.org/t/p/w500${movie["poster_path"]}`}
+            src={`https://image.tmdb.org/t/p/w500${movieImage}`}
             alt="movie-image"
             className="rounded-xl"
-            loading="lazy"
           />
         </div>
+
         <div className="flex flex-col w-full p-3 space-y-2 bg-white sm:w-2/3">
           <div className="flex justify-between item-center">
             <p className="hidden font-medium text-gray-500 sm:block">
