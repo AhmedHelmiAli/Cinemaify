@@ -38,6 +38,7 @@ const LazyImage: React.FC<{ image: string }> = ({ image }) => {
     <>
       {inView ? (
         <img
+          fetchPriority="high"
           src={`https://image.tmdb.org/t/p/w500${image}`}
           className="block object-cover w-full h-full rounded-t-lg group-hover:opacity-50"
         />
